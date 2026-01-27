@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/webdevyn.github.io/static/css/main.f0ea1254.css",
-    "main.js": "/webdevyn.github.io/static/js/main.0bb41f49.js",
-    "static/js/453.15a626a8.chunk.js": "/webdevyn.github.io/static/js/453.15a626a8.chunk.js",
-    "index.html": "/webdevyn.github.io/index.html",
-    "main.f0ea1254.css.map": "/webdevyn.github.io/static/css/main.f0ea1254.css.map",
-    "main.0bb41f49.js.map": "/webdevyn.github.io/static/js/main.0bb41f49.js.map",
-    "453.15a626a8.chunk.js.map": "/webdevyn.github.io/static/js/453.15a626a8.chunk.js.map"
+    "main.css": "/static/css/main.f0ea1254.css",
+    "main.js": "/static/js/main.3ab422e6.js",
+    "static/js/453.15a626a8.chunk.js": "/static/js/453.15a626a8.chunk.js",
+    "index.html": "/index.html",
+    "main.f0ea1254.css.map": "/static/css/main.f0ea1254.css.map",
+    "main.3ab422e6.js.map": "/static/js/main.3ab422e6.js.map",
+    "453.15a626a8.chunk.js.map": "/static/js/453.15a626a8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f0ea1254.css",
-    "static/js/main.0bb41f49.js"
+    "static/js/main.3ab422e6.js"
   ]
 }
