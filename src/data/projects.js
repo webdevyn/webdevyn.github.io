@@ -1,8 +1,8 @@
 export const projects = [
   {
-    title: "AI Resume Bullet Optimizer",
+    title: "App that does something incredibly fascinating",
     description:
-      "A GenAI app that rewrites resume bullets based on job descriptions.",
+      "An app that demonstrates my expert knowledge in whatever it is you need.",
     github: "https://github.com/yourusername/project-repo",
   },
 ];

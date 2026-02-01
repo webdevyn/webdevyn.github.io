@@ -4,7 +4,7 @@ export default function Contact() {
       <h2 className="text-2xl font-semibold mb-4">Contact</h2>
 
       <a
-        href="https://linkedin.com/in/yourprofile"
+        href="https://www.linkedin.com/in/devynweir/"
         className="block text-blue-600 hover:underline"
         target="_blank"
         rel="noopener noreferrer"
@@ -12,7 +12,7 @@ export default function Contact() {
         LinkedIn
       </a>
 
-      <p className="mt-2 text-gray-700">your@email.com</p>
+      <p className="mt-2 text-gray-700">devynweir@outlook.com</p>
     </section>
   );
 }
