@@ -16,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backend" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -94,7 +94,7 @@
       <workItem from="1770215953211" duration="992000" />
       <workItem from="1770217563718" duration="1101000" />
       <workItem from="1770231196918" duration="970000" />
-      <workItem from="1770317984026" duration="6203000" />
+      <workItem from="1770317984026" duration="6602000" />
     </task>
     <servers />
   </component>
