@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react";
 
 function QuoteDisplay() {
-    const [quote, setQuote] = useState({q: '', a: ''});
+    const [quote, setQuote] = useState({text: '', author: ''});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
 
@@ -12,8 +12,7 @@ function QuoteDisplay() {
                 return res.json();
             })
             .then(data => {
-                const firstQuote = data[0];
-                setQuote({q: firstQuote.q, a:firstQuote.a});
+                setQuote({text: data.text, author: data.author});
                 setLoading(false);
             })
             .catch(err => {
@@ -34,7 +33,6 @@ function QuoteDisplay() {
         return (
             <div className="flex items-center justify-center min-h-[400px] bg-gradient-to-br from-rose-50 to-rose-100">
                 <div className="text-center p-8 max-w-md">
-                    <div className="text-6xl mb-4">❌</div>
                     <h2 className="text-2xl font-bold text-rose-800 mb-2">{error}</h2>
                     <button
                         onClick={() => window.location.reload()}
@@ -53,12 +51,12 @@ function QuoteDisplay() {
                 <div className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 p-12 text-center">
                     <div className="quote-text mb-8">
                         <blockquote className="text-4xl md:text-5xl lg:text-6xl leading-tight font-light tracking-wide text-slate-900/90 italic mb-8 px-8 py-12">
-                            "{quote.q}"
+                            "{quote.text}"
                         </blockquote>
                         <div className="quote-author flex items-center justify-center gap-3">
                             <div className="w-2 h-2 bg-gradient-to-r from-rose-400 to-pink-500 rounded-full"></div>
                             <cite className="text-xl md:text-2xl font-semibold text-slate-700 not-italic">
-                                — {quote.a}
+                                — {quote.author}
                             </cite>
                         </div>
                     </div>
@@ -70,7 +68,6 @@ function QuoteDisplay() {
                         New Quote
                     </button>
                 </div>
-
             </div>
         </div>
     );
