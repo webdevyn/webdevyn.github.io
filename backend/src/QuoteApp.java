@@ -64,14 +64,15 @@ public class QuoteApp {
                 exchange.sendResponseHeaders(500, -1);
             }
         });
-        //register the shutdown hook for a nice server shutdown
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            System.out.println("Shutting down server ...");
-            server.stop(2); //server stops after 2 second delay
-            System.out.println("Server stopped.");
-        }));
 
         server.start();
         System.out.println("Server started on port 8080 at /api/quote");
+
+        // keep JVM alive and server running
+        try {
+            Thread.currentThread().join();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 }
