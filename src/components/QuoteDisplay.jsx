@@ -6,7 +6,7 @@ function QuoteDisplay() {
     const [error, setError] = useState('');
 
     useEffect(() => {
-        fetch('https://webdevyn-github-io-quote-backend.onrender.com')
+        fetch('https://webdevyn-github-io-quote-backend.onrender.com/api/quote')
             .then(res => {
                 if (!res.ok) throw new Error('Failed to fetch quote');
                 return res.json();

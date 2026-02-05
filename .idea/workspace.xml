@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="657fbe12-a7fa-452f-ac73-23b63ffe4e8d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/QuoteDisplay.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/QuoteDisplay.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backend" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -91,7 +92,7 @@
       <workItem from="1770215953211" duration="992000" />
       <workItem from="1770217563718" duration="1101000" />
       <workItem from="1770231196918" duration="970000" />
-      <workItem from="1770317984026" duration="7904000" />
+      <workItem from="1770317984026" duration="8731000" />
     </task>
     <servers />
   </component>
