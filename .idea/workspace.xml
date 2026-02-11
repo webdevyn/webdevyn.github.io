@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="657fbe12-a7fa-452f-ac73-23b63ffe4e8d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/QuoteDisplay.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/QuoteDisplay.jsx" afterDir="false" />
     </list>
@@ -92,12 +93,16 @@
       <workItem from="1770215953211" duration="992000" />
       <workItem from="1770217563718" duration="1101000" />
       <workItem from="1770231196918" duration="970000" />
-      <workItem from="1770317984026" duration="8731000" />
+      <workItem from="1770317984026" duration="9382000" />
+      <workItem from="1770820704992" duration="2800000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
