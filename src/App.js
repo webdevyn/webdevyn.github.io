@@ -5,7 +5,7 @@ import QuoteDisplay from "./components/QuoteDisplay";
 
 function App() {
   return (
-    <main className="max-w-3xl mx-auto px-6 py-12 bg-gray-50 text-gray-800 min-h-screen">
+    <main className="w-auto mx-auto px-6 py-12 bg-gray-300 text-gray-800 min-h-screen">
       <Header />
       <Projects />
       <QuoteDisplay/>

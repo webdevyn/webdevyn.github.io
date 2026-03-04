@@ -1,8 +1,7 @@
 export const projects = [
   {
-    title: "App that does something incredibly fascinating",
-    description:
-      "An app that demonstrates my expert knowledge in whatever it is you need.",
-    github: "https://github.com/yourusername/project-repo",
+    title: "Housing Price Predictor",
+    description: "Check out my Housing Price Predictor project.",
+    github: "https://housing-predictor-e3tuxysdkaenf2gtqm62zu.streamlit.app/",
   },
 ];
