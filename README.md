@@ -1,70 +1,117 @@
-# Getting Started with Create React App
+# Devyn's Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive portfolio website showcasing my web development projects and skills. Built with React, Tailwind CSS, and featuring a Java backend for dynamic functionality.
 
-## Available Scripts
+**Live Site:** [webdevyn.github.io](https://webdevyn.github.io)
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+This is a full-stack portfolio application that demonstrates modern web development practices. The frontend features an interactive, component-based React interface with Tailwind CSS styling, while the backend provides Java services for handling quotes and other dynamic content.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Frontend
+- **React** (v19.2.3) - Modern UI library with hooks and functional components
+- **Tailwind CSS** (v3.4.19) - Utility-first CSS framework for responsive design
+- **PostCSS** - CSS processing and autoprefixing
+- **React Testing Library** - Unit and integration testing
 
-### `npm test`
+### Backend
+- **Java** - Backend services and API development
+- **Maven** - Dependency management and build automation
+- **Docker** - Containerization for deployment
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Structure
 
-### `npm run build`
+```
+webdevyn.github.io/
+├── src/                           # React frontend source
+│   ├── components/                # Reusable React components
+│   ├── data/                      # Static data and content files
+│   ├── App.js                     # Main application component
+│   ├── App.css                    # Application styles
+│   ├── index.js                   # React entry point
+│   └── index.css                  # Global styles
+├── public/                        # Static assets
+├── backend/                       # Java backend services
+│   ├── src/                       # Java source code
+│   ├── pom.xml                    # Maven configuration
+│   ├── Dockerfile                 # Docker configuration
+│   └── portfolio-quote-app.iml    # IntelliJ project file
+├── package.json                   # Node.js dependencies and scripts
+├── tailwind.config.js             # Tailwind CSS configuration
+├── postcss.config.js              # PostCSS configuration
+└── README.md                      # This file
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
+- Node.js and npm
+- Java 11+ (for backend development)
+- Docker (for containerized deployment)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `npm run eject`
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/webdevyn/webdevyn.github.io.git
+   cd webdevyn.github.io
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. **Install frontend dependencies**
+   ```bash
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Available Scripts
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Frontend Development
+- `npm start` - Start the development server at [http://localhost:3000](http://localhost:3000)
+- `npm test` - Launch the test runner in interactive watch mode
+- `npm run build` - Create an optimized production build
+- `npm run deploy` - Build and deploy to GitHub Pages
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### Backend Development
+- `mvn clean install` - Build the Java backend
+- `docker build -t portfolio-backend .` - Build Docker image
+- `docker run -p 8080:8080 portfolio-backend` - Run containerized backend
 
-## Learn More
+## Features
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Responsive Design** - Mobile-first approach with Tailwind CSS
+- **Component-Based Architecture** - Modular, reusable React components
+- **Dynamic Content** - Backend integration for quotes and dynamic data
+- **Optimized Performance** - Production builds with code splitting and minification
+- **Containerized Deployment** - Docker support for easy scaling
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Deployment
 
-### Code Splitting
+The frontend is automatically deployed to GitHub Pages using the `gh-pages` package. Push to the main branch to trigger a new deployment:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm run deploy
+```
 
-### Analyzing the Bundle Size
+The backend can be deployed as a Docker container to any platform supporting containers.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Testing
 
-### Making a Progressive Web App
+Run the test suite with:
+```bash
+npm test
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Development Notes
 
-### Advanced Configuration
+- **Environment Variables**: Configure via `.env` file (see `.env` for example)
+- **Styling**: All CSS is generated from Tailwind utilities. Custom CSS should be added to component files.
+- **Component Organization**: Place new components in `src/components/` directory
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## License
 
-### Deployment
+This project is open source and available under the MIT License.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Contact
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For inquiries, visit [webdevyn.github.io](https://webdevyn.github.io) or check out my GitHub profile [@webdevyn](https://github.com/webdevyn).
