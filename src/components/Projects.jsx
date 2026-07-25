@@ -7,18 +7,21 @@ export default function Projects() {
 
       <div className="space-y-6">
         {projects.map((project, index) => (
-          <div key={index} className="inline-block bg-white rounded-md shadow p-6">
+          <div
+            key={index}
+            className="inline-block bg-white rounded-md shadow p-6"
+          >
             <h3 className="text-xl font-semibold">{project.title}</h3>
 
             <p className="text-gray-600 mt-2">{project.description}</p>
 
             <a
-              href={project.github}
+              href={project.streamlit}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mt-4 text-black hover:underline"
             >
-              View on GitHub →
+              View on Streamlit →
             </a>
           </div>
         ))}
