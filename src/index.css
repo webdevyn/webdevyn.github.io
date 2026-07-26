@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.landing-typed-title {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.landing-typed-title::after {
+  content: "";
+  width: 0.08em;
+  height: 1em;
+  margin-left: 0.08em;
+  background: currentColor;
+  animation: cursor-blink 0.9s steps(1) infinite;
+}
+
+.typed-letter {
+  opacity: 0;
+  transform: translateY(0.2em);
+  animation: typed-letter-in 0.24s ease-out forwards;
+}
+
+@keyframes typed-letter-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cursor-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
