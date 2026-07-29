@@ -1,70 +1,135 @@
-import { useState, useEffect } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 function QuoteDisplay() {
-    const [quote, setQuote] = useState({ text: '', author: '' });
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState('');
+  const [currentQuote, setCurrentQuote] = useState({ text: "", author: "" });
+  const [pendingQuote, setPendingQuote] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [transitionPhase, setTransitionPhase] = useState("visible");
+  const latestQuoteRef = useRef(currentQuote);
 
-    // function to fetch a quote
-    const fetchQuote = () => {
-        setLoading(true);
-        setError('');
+  useEffect(() => {
+    latestQuoteRef.current = currentQuote;
+  }, [currentQuote]);
 
-        fetch(`${process.env.REACT_APP_QUOTE_API_URL}/api/quote`)
-            .then(res => {
-                if (!res.ok) throw new Error('Failed to fetch quote');
-                return res.json();
-            })
-            .then(data => {
-                setQuote({ text: data.text, author: data.author });
-                setLoading(false);
-            })
-            .catch(err => {
-                setError('Failed to load quote');
-                setLoading(false);
-            });
-    };
+  const fetchQuote = useCallback(async (previousQuote = null) => {
+    setError("");
 
-    // initial fetch
-    useEffect(() => {
-        fetchQuote();
-    }, []);
+    let candidate = null;
+    let attempts = 0;
 
-    return (
-        <div className="bg-gradient-to-br via-white to-indigo-100 py-5 ">
-            <div className=" mx-auto">
-                <div className="bg-gray-500 backdrop-blur-md rounded-md shadow-2xl border border-white/50 p-12 text-center w-auto min-w-[300px] max-w-xl">
-                    {/* Quote content */}
-                    <div className="quote-text mb-8 min-h-[150px]">
-                        {loading ? (
-                            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-slate-900 mx-auto my-12"></div>
-                        ) : error ? (
-                            <p className="text-rose-800 font-bold">{error}</p>
-                        ) : (
-                            <>
-                                <blockquote className="text-2xl md:text-3xl lg:text-4xl text-white leading-tight font-light tracking-wide text-slate-900/90 italic mb-4 px-4">
-                                    "{quote.text}"
-                                </blockquote>
-                                <div className="quote-author flex items-center justify-center gap-3">
-                                    <cite className="text-xl md:text-2xl font-semibold text-slate-700 not-italic">
-                                        — {quote.author || "Unknown"}
-                                    </cite>
-                                </div>
-                            </>
-                        )}
-                    </div>
+    while (!candidate && attempts < 4) {
+      try {
+        const res = await fetch(
+          `${process.env.REACT_APP_QUOTE_API_URL}/api/quote`,
+        );
+        if (!res.ok) throw new Error("Failed to fetch quote");
 
-                    {/* Quote button */}
-                    <button
-                        onClick={fetchQuote}
-                        className="mt-4 px-8 py-4 bg-gradient-to-r from-gray-600 to-gray-950 text-white text-lg font-semibold rounded-md hover:from-gray-950 hover:to-gray-600 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
-                    >
-                        New Quote
-                    </button>
+        const data = await res.json();
+        candidate = { text: data.text, author: data.author };
+
+        if (
+          previousQuote &&
+          candidate.text === previousQuote.text &&
+          candidate.author === previousQuote.author
+        ) {
+          candidate = null;
+        }
+      } catch (err) {
+        candidate = null;
+      }
+
+      attempts += 1;
+    }
+
+    if (!candidate) {
+      setError("Failed to load quote");
+      setLoading(false);
+      return;
+    }
+
+    if (previousQuote) {
+      setPendingQuote(candidate);
+      setTransitionPhase("fadingOut");
+
+      window.setTimeout(() => {
+        setTransitionPhase("fadingIn");
+
+        window.setTimeout(() => {
+          setCurrentQuote(candidate);
+          latestQuoteRef.current = candidate;
+          setPendingQuote(null);
+          setTransitionPhase("visible");
+          setLoading(false);
+        }, 300);
+      }, 300);
+      return;
+    }
+
+    setCurrentQuote(candidate);
+    latestQuoteRef.current = candidate;
+    setPendingQuote(null);
+    setTransitionPhase("visible");
+    setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    fetchQuote();
+
+    const intervalId = window.setInterval(() => {
+      fetchQuote(latestQuoteRef.current);
+    }, 7000);
+
+    return () => window.clearInterval(intervalId);
+  }, [fetchQuote]);
+
+  return (
+    <div className="mt-16 flex justify-center">
+      <div className="w-full max-w-sm rounded-2xl border border-gray-200/80 bg-white/80 px-5 py-4 text-center shadow-sm backdrop-blur-sm">
+        <div className="min-h-[96px]">
+          {loading ? (
+            <div className="mx-auto my-6 h-8 w-8 animate-spin rounded-full border-b-2 border-slate-900"></div>
+          ) : error ? (
+            <p className="font-semibold text-rose-800">{error}</p>
+          ) : (
+            <div className="relative min-h-[96px]">
+              <div
+                className={`absolute inset-0 transition-all duration-300 ${
+                  transitionPhase === "visible"
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-2 opacity-0"
+                }`}
+              >
+                <blockquote className="text-sm italic leading-6 text-gray-700">
+                  “{currentQuote.text}”
+                </blockquote>
+                <cite className="mt-2 block text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
+                  — {currentQuote.author || "Unknown"}
+                </cite>
+              </div>
+
+              {pendingQuote && (
+                <div
+                  className={`absolute inset-0 transition-all duration-300 ${
+                    transitionPhase === "fadingIn"
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-2 opacity-0"
+                  }`}
+                >
+                  <blockquote className="text-sm italic leading-6 text-gray-700">
+                    “{pendingQuote.text}”
+                  </blockquote>
+                  <cite className="mt-2 block text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
+                    — {pendingQuote.author || "Unknown"}
+                  </cite>
                 </div>
+              )}
             </div>
+          )}
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export default QuoteDisplay;

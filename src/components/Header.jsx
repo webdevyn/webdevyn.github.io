@@ -4,8 +4,8 @@ export default function Header() {
   const [imageError, setImageError] = useState(false);
 
   return (
-    <section className="mb-12">
-      <div className="flex flex-col gap-6 md:flex-row md:items-start">
+    <section className="mb-12 flex justify-center">
+      <div className="flex w-full max-w-5xl flex-col items-center gap-8 rounded-3xl bg-white/60 px-6 py-10 shadow-sm backdrop-blur-sm md:flex-row md:items-center md:gap-10 md:px-10">
         <div className="shrink-0">
           {!imageError ? (
             <img
@@ -21,8 +21,8 @@ export default function Header() {
           )}
         </div>
 
-        <div>
-          <h1 className="text-4xl font-bold mb-2">Devyn Weir</h1>
+        <div className="text-center md:text-left">
+          <h1 className="mb-4 text-4xl font-bold">Devyn Weir</h1>
           <p className="text-lg text-gray-600">
             I'm a Software Developer with a passion for building full-stack
             applications that solve real-world problems. I've developed
@@ -31,7 +31,7 @@ export default function Header() {
             Next.js, Express, FastAPI, SQL, PostgreSQL, MongoDB, Firebase,
             Supabase, Docker, and Azure.
           </p>
-          <p className="text-lg text-gray-600">
+          <p className="mt-4 text-lg text-gray-600">
             Through academic and personal projects, I've built enterprise-style
             scheduling systems, mobile expense tracking applications, and
             full-stack web platforms while collaborating with teammates using
@@ -40,7 +40,7 @@ export default function Header() {
             experiences, building scalable backend systems, and writing clean,
             maintainable code.
           </p>
-          <p className="text-lg text-gray-600">
+          <p className="mt-4 text-lg text-gray-600">
             Currently, I'm particularly interested in full-stack software
             engineering, cloud technologies, and consulting roles where I can
             continue learning while helping organizations and people solve
