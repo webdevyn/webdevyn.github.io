@@ -13,7 +13,7 @@ function LandingPage() {
       </h1>
 
       <Link
-        to="/main"
+        to="/welcomepage"
         className="landing-center-link text-blue-600 underline hover:text-blue-800"
       >
         click here
