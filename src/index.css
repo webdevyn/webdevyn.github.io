@@ -198,6 +198,37 @@ body {
   }
 }
 
+.welcome-greeting-text {
+  display: inline-block;
+  background: linear-gradient(
+    125deg,
+    #4a2f1d,
+    #7a4c2f,
+    #a96a3d,
+    #5b3b24,
+    #2e241b
+  );
+  background-size: 220% 220%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: welcome-text-gradient-shift 7s ease-in-out infinite;
+}
+
+.welcome-cta-gradient {
+  background: #000000;
+}
+
+@keyframes welcome-text-gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 @keyframes welcome-gradient-shift {
   0% {
     background-position: 0% 50%;
