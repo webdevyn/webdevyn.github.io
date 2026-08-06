@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website showcasing my web development projects and skills. Built with React, Tailwind CSS, and featuring a Java backend for dynamic functionality.
 
-**Live Site:** [webdevyn.github.io]([https://webdevyn.github.io](https://webdevyn-github-io.vercel.app/))
+**Live Site:** [webdevyn.github.io]([[https://webdevyn.github.io](https://webdevyn-github-io.vercel.app/)](https://webdevyn-portfolio.vercel.app/))
 
 ## Overview
 
