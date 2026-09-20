@@ -1,0 +1,20 @@
+{
+  "name": "Devyn's Portfolio",
+  "install": "sudo apt-get update && sudo apt-get install -y --no-install-recommends maven && npm install && ( cd backend && mvn -q clean package -DskipTests )",
+  "terminals": [
+    {
+      "name": "backend",
+      "command": "cd backend && java -jar target/quote-api-1.0-SNAPSHOT-jar-with-dependencies.jar",
+      "description": "Java quote API server on http://localhost:8080 (endpoint /api/quote)."
+    },
+    {
+      "name": "frontend",
+      "command": "REACT_APP_QUOTE_API_URL=http://localhost:8080 BROWSER=none PORT=3000 npm start",
+      "description": "React (CRA) dev server on http://localhost:3000, wired to the local quote API."
+    }
+  ],
+  "ports": [
+    { "name": "frontend", "port": 3000 },
+    { "name": "backend", "port": 8080 }
+  ]
+}
