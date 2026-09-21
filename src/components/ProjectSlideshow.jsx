@@ -74,12 +74,12 @@ export default function ProjectSlideshow({ images = [], projectTitle }) {
       onMouseLeave={() => setPaused(false)}
     >
       <div className="relative overflow-hidden rounded-md bg-stone-100 ring-1 ring-black/10">
-        <div className="relative aspect-[16/10] w-full max-h-[min(18rem,46vh)] landscape-phone:max-h-[28vh] landscape-phone:aspect-[16/9]">
+        <div className="relative flex h-[min(24rem,58vh)] w-full items-center justify-center landscape-phone:h-[32vh]">
           {current.type === "image" ? (
             <img
               src={current.src}
               alt={current.alt}
-              className="h-full w-full object-contain object-top"
+              className="max-h-full max-w-full object-contain"
             />
           ) : (
             <div
