@@ -1,4 +1,5 @@
 import { projects } from "../data/projects";
+import ProjectSlideshow from "./ProjectSlideshow";
 
 export default function Projects() {
   return (
@@ -8,9 +9,9 @@ export default function Projects() {
       </h2>
 
       <div className="w-full space-y-6 landscape-phone:space-y-3">
-        {projects.map((project, index) => (
+        {projects.map((project) => (
           <div
-            key={index}
+            key={project.id || project.title}
             className="w-full max-w-full rounded-md bg-white p-4 shadow sm:p-6 landscape-phone:p-3"
           >
             <h3 className="text-xl font-semibold break-words landscape-phone:text-lg">
@@ -20,6 +21,11 @@ export default function Projects() {
             <p className="mt-2 text-gray-600 break-words landscape-phone:mt-1 landscape-phone:text-sm">
               {project.description}
             </p>
+
+            <ProjectSlideshow
+              images={project.images || []}
+              projectTitle={project.title}
+            />
 
             <a
               href={project.streamlit}
