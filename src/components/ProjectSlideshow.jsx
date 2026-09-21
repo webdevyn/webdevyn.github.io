@@ -5,11 +5,13 @@ const RESUME_AFTER_CLICK_MS = 3000;
 
 function buildSlides(images, projectTitle) {
   if (images.length > 0) {
-    return images.map((src, index) => ({
-      type: "image",
-      src,
-      alt: `${projectTitle} screenshot ${index + 1}`,
-    }));
+    return images.map((image, index) => {
+      const src = typeof image === "string" ? image : image.src;
+      const alt =
+        (typeof image === "object" && image.alt) ||
+        `${projectTitle} screenshot ${index + 1}`;
+      return { type: "image", src, alt };
+    });
   }
 
   return [1, 2, 3].map((n) => ({
@@ -77,7 +79,7 @@ export default function ProjectSlideshow({ images = [], projectTitle }) {
             <img
               src={current.src}
               alt={current.alt}
-              className="h-full w-full object-cover object-top"
+              className="h-full w-full object-contain object-top"
             />
           ) : (
             <div
