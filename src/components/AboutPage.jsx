@@ -4,7 +4,7 @@ function AboutPage() {
   return (
     <main className="welcome-animated-bg min-h-screen max-w-full overflow-x-hidden px-4 py-4 text-gray-800 sm:px-6 sm:py-6 md:py-8">
       <SiteHeader />
-      <section className="mx-auto flex w-full min-w-0 max-w-6xl flex-col items-center gap-6 md:min-h-[80vh] md:flex-row md:items-center md:justify-start md:gap-8">
+      <section className="mx-auto flex w-full min-w-0 max-w-6xl flex-col items-center gap-5 md:min-h-[80vh] md:flex-row md:items-center md:justify-start md:gap-8">
         <img
           src="/images/ProfilePicMallorca.jpeg"
           alt="Portrait of Devyn Weir"

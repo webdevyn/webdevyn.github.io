@@ -86,7 +86,7 @@ function WelcomePage() {
             transition={{ duration: 0.18 }}
           >
             <h1
-              className={`welcome-greeting-text max-w-full text-balance text-[clamp(1.35rem,6.2vw,3.75rem)] font-light tracking-wide transition-all duration-700 ease-out ${
+              className={`welcome-greeting-text max-w-full text-balance text-[clamp(1.35rem,6.2vw,3.75rem)] font-light tracking-wide transition-all duration-700 ease-out md:whitespace-nowrap ${
                 showFirstGreeting
                   ? "translate-y-0 opacity-100"
                   : "translate-y-4 opacity-0"
@@ -95,7 +95,7 @@ function WelcomePage() {
               My name is Devyn Weir.
             </h1>
             <h1
-              className={`welcome-greeting-text mt-3 max-w-full text-balance text-[clamp(1.35rem,6.2vw,3.75rem)] font-light tracking-wide transition-all duration-700 ease-out sm:mt-4 ${
+              className={`welcome-greeting-text mt-3 max-w-full text-balance text-[clamp(1.35rem,6.2vw,3.75rem)] font-light tracking-wide transition-all duration-700 ease-out md:whitespace-nowrap sm:mt-4 ${
                 showSecondGreeting
                   ? "translate-y-0 opacity-100"
                   : "translate-y-4 opacity-0"

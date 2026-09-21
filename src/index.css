@@ -25,6 +25,14 @@ body {
   aspect-ratio: 453 / 693;
 }
 
+@media (max-width: 767px) {
+  .profile-photo-frame {
+    max-height: 46vh;
+    width: auto;
+    height: min(46vh, calc((100vw - 2rem) * 693 / 453));
+  }
+}
+
 .landing-page-root {
   position: relative;
 }
