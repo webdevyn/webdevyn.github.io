@@ -105,7 +105,7 @@ function WelcomePage() {
             </h1>
 
             <div
-              className={`mt-6 flex w-full min-w-0 max-w-md flex-col items-stretch justify-center gap-3 transition-all duration-700 ease-out sm:mt-10 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 landscape-phone:mt-3 landscape-phone:max-w-none landscape-phone:flex-row landscape-phone:flex-nowrap landscape-phone:gap-3 ${
+              className={`welcome-cta-row mt-6 flex w-full min-w-0 max-w-md flex-col items-stretch justify-center gap-3 transition-all duration-700 ease-out sm:mt-10 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 landscape-phone:mt-3 landscape-phone:max-w-none landscape-phone:!flex-row landscape-phone:!flex-nowrap landscape-phone:gap-3 ${
                 showActionButtons
                   ? "translate-y-0 opacity-100"
                   : "translate-y-3 opacity-0"
@@ -115,13 +115,13 @@ function WelcomePage() {
                 type="button"
                 onClick={handleAboutClick}
                 disabled={isTransitioningToAbout}
-                className="welcome-cta-gradient flex h-14 w-full items-center justify-center rounded-lg px-5 text-base font-light text-white shadow-sm transition sm:h-20 sm:w-52 sm:text-lg landscape-phone:h-9 landscape-phone:w-36 landscape-phone:px-3 landscape-phone:text-sm"
+                className="welcome-cta-gradient flex h-14 w-full items-center justify-center rounded-lg px-5 text-base font-light text-white shadow-sm transition sm:h-20 sm:w-52 sm:text-lg landscape-phone:!h-9 landscape-phone:!w-36 landscape-phone:px-3 landscape-phone:text-sm"
               >
                 About Me
               </button>
               <Link
                 to="/projects"
-                className="welcome-cta-gradient flex h-14 w-full items-center justify-center rounded-lg px-5 text-base font-light text-white shadow-sm transition sm:h-20 sm:w-52 sm:text-lg landscape-phone:h-9 landscape-phone:w-36 landscape-phone:px-3 landscape-phone:text-sm"
+                className="welcome-cta-gradient flex h-14 w-full items-center justify-center rounded-lg px-5 text-base font-light text-white shadow-sm transition sm:h-20 sm:w-52 sm:text-lg landscape-phone:!h-9 landscape-phone:!w-36 landscape-phone:px-3 landscape-phone:text-sm"
               >
                 Projects
               </Link>
