@@ -4,9 +4,9 @@ function LandingPage() {
   const title = "Hello World";
 
   return (
-    <div className="landing-page-root min-h-screen bg-white text-gray-900">
+    <div className="landing-page-root min-h-screen max-w-full overflow-x-hidden bg-white text-gray-900">
       <h1
-        className="landing-title-wrap text-4xl font-normal landing-typed-title"
+        className="landing-title-wrap font-normal landing-typed-title"
         aria-label={title}
       >
         {title}
