@@ -33,6 +33,21 @@ body {
   }
 }
 
+@media (orientation: landscape) and (max-height: 500px) {
+  .profile-photo-frame {
+    height: min(calc(100dvh - 4.75rem), 22rem);
+    width: auto;
+    max-width: min(38vw, 16rem);
+    max-height: calc(100dvh - 4.75rem);
+  }
+
+  .landing-title-wrap {
+    top: 0.75rem;
+    left: 1rem;
+    font-size: clamp(1.25rem, 4.5vh, 1.75rem);
+  }
+}
+
 .landing-page-root {
   position: relative;
 }

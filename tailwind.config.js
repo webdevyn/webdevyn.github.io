@@ -9,5 +9,12 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function landscapePhone({ addVariant }) {
+      addVariant(
+        "landscape-phone",
+        "@media (orientation: landscape) and (max-height: 500px)",
+      );
+    },
+  ],
 };
