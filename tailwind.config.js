@@ -13,7 +13,7 @@ module.exports = {
     function landscapePhone({ addVariant }) {
       addVariant(
         "landscape-phone",
-        "@media (orientation: landscape) and (max-height: 500px)",
+        "@media (max-height: 500px) and (min-width: 560px)",
       );
     },
   ],
