@@ -8,8 +8,29 @@
     BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--app-font-family);
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.profile-photo-frame {
+  width: min(100%, 453px);
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 453 / 693;
+}
+
+@media (max-width: 767px) {
+  .profile-photo-frame {
+    max-height: 46vh;
+    width: auto;
+    height: min(46vh, calc((100vw - 2rem) * 693 / 453));
+  }
 }
 
 .landing-page-root {
@@ -18,8 +39,18 @@ body {
 
 .landing-title-wrap {
   position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
+  top: 1rem;
+  left: 1rem;
+  max-width: calc(100% - 2rem);
+  font-size: clamp(1.5rem, 8vw, 2.25rem);
+}
+
+@media (min-width: 640px) {
+  .landing-title-wrap {
+    top: 1.5rem;
+    left: 1.5rem;
+    font-size: 2.25rem;
+  }
 }
 
 .landing-center-link {
@@ -133,7 +164,8 @@ body {
 .welcome-animated-bg {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
   background: linear-gradient(
     125deg,
     #fffef9,
@@ -200,6 +232,7 @@ body {
 
 .welcome-greeting-text {
   display: inline-block;
+  max-width: 100%;
   background: linear-gradient(
     125deg,
     #4a2f1d,
