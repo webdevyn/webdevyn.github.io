@@ -1,6 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { isDesktopViewport } from "../utils/viewport";
+
+const ABOUT_SECTION_ID = "about-me";
+
+function scrollToAboutSection() {
+  document
+    .getElementById(ABOUT_SECTION_ID)
+    ?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
 function SiteHeader() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleAboutClick = (event) => {
+    if (isDesktopViewport()) {
+      return;
+    }
+
+    event.preventDefault();
+
+    if (location.pathname === "/welcomepage") {
+      scrollToAboutSection();
+      return;
+    }
+
+    navigate("/welcomepage#about-me");
+  };
+
   return (
     <header className="mx-auto mb-6 w-full max-w-full px-0 sm:mb-8 landscape-phone:mb-1">
       <div className="flex min-w-0 flex-col gap-3 py-2 sm:flex-row sm:items-center sm:justify-between sm:gap-4 landscape-phone:flex-row landscape-phone:items-center landscape-phone:gap-3 landscape-phone:py-0">
@@ -17,6 +44,7 @@ function SiteHeader() {
         >
           <Link
             to="/about"
+            onClick={handleAboutClick}
             className="whitespace-nowrap text-sm font-semibold text-gray-700 transition hover:text-black sm:text-base md:text-lg landscape-phone:text-sm"
           >
             About Me
