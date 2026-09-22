@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import SiteHeader from "./SiteHeader";
+import AboutSection from "./AboutSection";
+import { isDesktopViewport } from "../utils/viewport";
 
 function WelcomePage() {
   const ABOUT_IMAGE_TARGET_MARGIN_LEFT_PX = 8;
@@ -11,6 +13,7 @@ function WelcomePage() {
     Math.round(ABOUT_IMAGE_SLIDE_DURATION_SECONDS * 1000) +
     ABOUT_IMAGE_SETTLE_BUFFER_MS;
 
+  const location = useLocation();
   const navigate = useNavigate();
   const aboutNavigationTimeoutRef = useRef(null);
   const profileImageContainerRef = useRef(null);
@@ -22,8 +25,19 @@ function WelcomePage() {
   const [isTransitioningToAbout, setIsTransitioningToAbout] = useState(false);
   const [aboutImageSlideX, setAboutImageSlideX] = useState(-420);
 
+  const scrollToAboutSection = () => {
+    document
+      .getElementById("about-me")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   const handleAboutClick = (event) => {
     event.preventDefault();
+
+    if (!isDesktopViewport()) {
+      scrollToAboutSection();
+      return;
+    }
 
     if (isTransitioningToAbout) {
       return;
@@ -42,6 +56,18 @@ function WelcomePage() {
       navigate("/about");
     }, ABOUT_NAV_DELAY_MS);
   };
+
+  useEffect(() => {
+    if (location.hash !== "#about-me") {
+      return undefined;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      scrollToAboutSection();
+    }, 50);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [location.hash]);
 
   useEffect(() => {
     const firstTimer = window.setTimeout(() => setShowFirstGreeting(true), 300);
@@ -72,7 +98,7 @@ function WelcomePage() {
   }, []);
 
   return (
-    <main className="welcome-animated-bg min-h-dvh max-w-full overflow-x-hidden px-4 py-4 text-gray-800 sm:px-6 sm:py-6 md:py-8 landscape-phone:h-dvh landscape-phone:overflow-hidden landscape-phone:px-4 landscape-phone:py-2">
+    <main className="welcome-animated-bg min-h-dvh max-w-full overflow-x-hidden px-4 py-4 text-gray-800 sm:px-6 sm:py-6 md:py-8 landscape-phone:h-dvh landscape-phone:overflow-y-auto landscape-phone:px-4 landscape-phone:py-2">
       <SiteHeader />
       <section className="welcome-fade-in mx-auto flex w-full min-w-0 max-w-6xl items-center justify-center md:min-h-[80vh] landscape-phone:h-[calc(100dvh-3.25rem)] landscape-phone:!min-h-0">
         <div className="flex w-full min-w-0 flex-col items-center justify-center gap-6 md:flex-row md:justify-center md:gap-12 landscape-phone:h-full landscape-phone:!flex-row landscape-phone:items-center landscape-phone:justify-center landscape-phone:!gap-4">
@@ -151,6 +177,10 @@ function WelcomePage() {
           </motion.div>
         </div>
       </section>
+
+      <div className="mt-10 pb-8 md:hidden">
+        <AboutSection />
+      </div>
     </main>
   );
 }
