@@ -98,9 +98,9 @@ function WelcomePage() {
   }, []);
 
   return (
-    <main className="welcome-animated-bg min-h-dvh max-w-full overflow-x-hidden px-4 py-4 text-gray-800 sm:px-6 sm:py-6 md:py-8 landscape-phone:h-dvh landscape-phone:overflow-y-auto landscape-phone:px-4 landscape-phone:py-2">
+    <main className="welcome-animated-bg min-h-dvh max-w-full px-4 py-4 text-gray-800 sm:px-6 sm:py-6 md:py-8 landscape-phone:px-4 landscape-phone:py-2">
       <SiteHeader />
-      <section className="welcome-fade-in mx-auto flex w-full min-w-0 max-w-6xl items-center justify-center md:min-h-[80vh] landscape-phone:h-[calc(100dvh-3.25rem)] landscape-phone:!min-h-0">
+      <section className="welcome-fade-in mx-auto flex w-full min-w-0 max-w-6xl items-center justify-center md:min-h-[80vh] landscape-phone:min-h-[calc(100dvh-3.25rem)]">
         <div className="flex w-full min-w-0 flex-col items-center justify-center gap-6 md:flex-row md:justify-center md:gap-12 landscape-phone:h-full landscape-phone:!flex-row landscape-phone:items-center landscape-phone:justify-center landscape-phone:!gap-4">
           <motion.div
             className={`mb-2 flex min-h-0 w-full min-w-0 max-w-full flex-col items-center justify-center text-center transition-transform duration-[1800ms] ease-[cubic-bezier(0.19,1,0.22,1)] sm:mb-4 sm:-translate-y-8 md:-translate-y-12 landscape-phone:mb-0 landscape-phone:flex-1 landscape-phone:!translate-y-0 landscape-phone:!translate-x-0 ${
