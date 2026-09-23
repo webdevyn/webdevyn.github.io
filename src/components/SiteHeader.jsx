@@ -29,8 +29,8 @@ function SiteHeader() {
   };
 
   return (
-    <header className="mx-auto mb-6 w-full max-w-full px-0 sm:mb-8 landscape-phone:mb-1">
-      <div className="flex min-w-0 flex-col gap-3 py-2 sm:flex-row sm:items-center sm:justify-between sm:gap-4 landscape-phone:flex-row landscape-phone:items-center landscape-phone:gap-3 landscape-phone:py-0">
+    <header className="site-header w-full max-w-full px-4 py-2 sm:px-6 landscape-phone:px-4 landscape-phone:py-1">
+      <div className="flex min-w-0 flex-col gap-3 py-1 sm:flex-row sm:items-center sm:justify-between sm:gap-4 landscape-phone:flex-row landscape-phone:items-center landscape-phone:gap-3 landscape-phone:py-0">
         <Link
           to="/welcomepage"
           className="max-w-full shrink-0 text-base font-semibold uppercase tracking-[0.12em] text-gray-800 transition hover:text-black sm:text-xl sm:tracking-[0.25em] md:text-2xl landscape-phone:text-sm landscape-phone:tracking-[0.14em]"
