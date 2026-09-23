@@ -2,7 +2,7 @@ function AboutSection({ id = "about-me" }) {
   return (
     <section
       id={id}
-      className="mx-auto flex w-full min-w-0 max-w-6xl scroll-mt-6 flex-col items-center gap-5 md:min-h-[80vh] md:flex-row md:items-center md:justify-start md:gap-8 landscape-phone:!min-h-0 landscape-phone:!flex-row landscape-phone:items-center landscape-phone:justify-start landscape-phone:!gap-4"
+      className="mx-auto flex w-full min-w-0 max-w-6xl scroll-mt-24 flex-col items-center gap-5 md:min-h-[80vh] md:flex-row md:items-center md:justify-start md:gap-8 landscape-phone:!min-h-0 landscape-phone:!flex-row landscape-phone:items-center landscape-phone:justify-start landscape-phone:!gap-4"
     >
       <img
         src="/images/ProfilePicMallorca.jpeg"

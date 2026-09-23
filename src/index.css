@@ -10,11 +10,11 @@
 
 html {
   overflow-x: clip;
+  scroll-padding-top: 5.5rem;
 }
 
 body {
   font-family: var(--app-font-family);
-  overflow-x: clip;
   max-width: 100%;
 }
 
@@ -191,6 +191,14 @@ body {
   outline-offset: 3px;
 }
 
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(253, 247, 238, 0.94);
+  backdrop-filter: blur(10px);
+}
+
 .welcome-fade-in {
   opacity: 0;
   transform: translateY(10px);
@@ -200,7 +208,6 @@ body {
 .welcome-animated-bg {
   position: relative;
   isolation: isolate;
-  overflow-x: clip;
   overflow-y: visible;
   background: linear-gradient(
     125deg,
@@ -252,6 +259,10 @@ body {
 .welcome-animated-bg > * {
   position: relative;
   z-index: 1;
+}
+
+.welcome-animated-bg > .site-header {
+  z-index: 50;
 }
 
 @keyframes welcome-fade-in {

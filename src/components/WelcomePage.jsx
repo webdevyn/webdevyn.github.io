@@ -98,8 +98,9 @@ function WelcomePage() {
   }, []);
 
   return (
-    <main className="welcome-animated-bg min-h-dvh max-w-full px-4 py-4 text-gray-800 sm:px-6 sm:py-6 md:py-8 landscape-phone:px-4 landscape-phone:py-2">
+    <main className="welcome-animated-bg min-h-dvh max-w-full text-gray-800">
       <SiteHeader />
+      <div className="px-4 py-4 sm:px-6 sm:py-6 md:py-8 landscape-phone:px-4 landscape-phone:py-2">
       <section className="welcome-fade-in mx-auto flex w-full min-w-0 max-w-6xl items-center justify-center md:min-h-[80vh] landscape-phone:min-h-[calc(100dvh-3.25rem)]">
         <div className="flex w-full min-w-0 flex-col items-center justify-center gap-6 md:flex-row md:justify-center md:gap-12 landscape-phone:h-full landscape-phone:!flex-row landscape-phone:items-center landscape-phone:justify-center landscape-phone:!gap-4">
           <motion.div
@@ -180,6 +181,7 @@ function WelcomePage() {
 
       <div className="mt-10 pb-8 md:hidden">
         <AboutSection />
+      </div>
       </div>
     </main>
   );
