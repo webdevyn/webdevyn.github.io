@@ -29,6 +29,13 @@ body {
   aspect-ratio: 453 / 693;
 }
 
+@media (min-width: 768px) {
+  .profile-photo-frame {
+    width: min(36vw, 22rem);
+    flex-shrink: 0;
+  }
+}
+
 @media (max-width: 767px) {
   .profile-photo-frame {
     max-height: 46vh;
@@ -295,9 +302,14 @@ body {
   }
 }
 
+.welcome-greeting-copy {
+  min-width: 0;
+}
+
 .welcome-greeting-text {
   display: inline-block;
   max-width: 100%;
+  overflow-wrap: break-word;
   background: linear-gradient(
     125deg,
     #4a2f1d,
