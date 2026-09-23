@@ -2,12 +2,12 @@ function AboutSection({ id = "about-me" }) {
   return (
     <section
       id={id}
-      className="mx-auto flex w-full min-w-0 max-w-6xl scroll-mt-6 flex-col items-center gap-5 md:min-h-[80vh] md:flex-row md:items-center md:justify-start md:gap-8 landscape-phone:h-[calc(100dvh-3.25rem)] landscape-phone:!min-h-0 landscape-phone:!flex-row landscape-phone:items-center landscape-phone:justify-start landscape-phone:!gap-4"
+      className="mx-auto flex w-full min-w-0 max-w-6xl scroll-mt-6 flex-col items-center gap-5 md:min-h-[80vh] md:flex-row md:items-center md:justify-start md:gap-8 landscape-phone:!min-h-0 landscape-phone:!flex-row landscape-phone:items-center landscape-phone:justify-start landscape-phone:!gap-4"
     >
       <img
         src="/images/ProfilePicMallorca.jpeg"
         alt="Portrait of Devyn Weir"
-        className="profile-photo-frame max-w-full rounded-xl object-cover ring-1 ring-black/10 landscape-phone:shrink-0"
+        className="profile-photo-frame hidden max-w-full rounded-xl object-cover ring-1 ring-black/10 md:block landscape-phone:shrink-0"
       />
       <div className="flex min-w-0 w-full max-w-prose flex-col justify-center md:ml-0 landscape-phone:flex-1">
         <h1 className="mb-3 text-3xl font-bold sm:mb-4 sm:text-4xl landscape-phone:mb-2 landscape-phone:text-2xl">
