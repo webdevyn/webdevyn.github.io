@@ -9,8 +9,12 @@
 }
 
 html {
-  overflow-x: clip;
   scroll-padding-top: 5.5rem;
+}
+
+.app-page {
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 body {
@@ -192,11 +196,29 @@ body {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 50;
   background: rgba(253, 247, 238, 0.94);
   backdrop-filter: blur(10px);
+}
+
+.has-fixed-header {
+  padding-top: 5.75rem;
+}
+
+@media (min-width: 640px) {
+  .has-fixed-header {
+    padding-top: 4.25rem;
+  }
+}
+
+@media (max-height: 500px) and (min-width: 560px) {
+  .has-fixed-header {
+    padding-top: 2.75rem;
+  }
 }
 
 .welcome-fade-in {
@@ -259,10 +281,6 @@ body {
 .welcome-animated-bg > * {
   position: relative;
   z-index: 1;
-}
-
-.welcome-animated-bg > .site-header {
-  z-index: 50;
 }
 
 @keyframes welcome-fade-in {
