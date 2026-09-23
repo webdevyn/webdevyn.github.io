@@ -100,10 +100,10 @@ function WelcomePage() {
     <main className="welcome-animated-bg has-fixed-header min-h-dvh max-w-full text-gray-800">
       <div className="px-4 py-4 sm:px-6 sm:py-6 md:py-8 landscape-phone:px-4 landscape-phone:py-2">
       <section className="welcome-fade-in mx-auto flex w-full min-w-0 max-w-6xl items-center justify-center md:min-h-[80vh] landscape-phone:min-h-[calc(100dvh-3.25rem)]">
-        <div className="flex w-full min-w-0 flex-col items-center justify-center gap-6 md:flex-row md:justify-center md:gap-12 landscape-phone:h-full landscape-phone:!flex-row landscape-phone:items-center landscape-phone:justify-center landscape-phone:!gap-4">
+        <div className="flex w-full min-w-0 flex-col items-center justify-center gap-6 md:flex-row md:items-center md:justify-center md:gap-8 landscape-phone:h-full landscape-phone:!flex-row landscape-phone:items-center landscape-phone:justify-center landscape-phone:!gap-4">
           <motion.div
-            className={`mb-2 flex min-h-0 w-full min-w-0 max-w-full flex-col items-center justify-center text-center transition-transform duration-[1800ms] ease-[cubic-bezier(0.19,1,0.22,1)] sm:mb-4 sm:-translate-y-8 md:-translate-y-12 landscape-phone:mb-0 landscape-phone:flex-1 landscape-phone:!translate-y-0 landscape-phone:!translate-x-0 ${
-              shiftGreetings ? "md:translate-x-0" : "md:translate-x-40"
+            className={`welcome-greeting-copy mb-2 flex min-h-0 w-full min-w-0 max-w-full flex-col items-center justify-center text-center transition-transform duration-[1800ms] ease-[cubic-bezier(0.19,1,0.22,1)] sm:mb-4 md:flex-1 md:basis-0 landscape-phone:mb-0 landscape-phone:flex-1 landscape-phone:!translate-y-0 landscape-phone:!translate-x-0 ${
+              shiftGreetings ? "md:translate-x-0" : "md:translate-x-8"
             }`}
             animate={{
               opacity: isTransitioningToAbout ? 0 : 1,
@@ -111,7 +111,7 @@ function WelcomePage() {
             transition={{ duration: 0.18 }}
           >
             <h1
-              className={`welcome-greeting-text max-w-full text-balance text-[clamp(1.35rem,6.2vw,3.75rem)] font-light tracking-wide transition-all duration-700 ease-out md:whitespace-nowrap landscape-phone:text-[clamp(1.05rem,4.6vh,1.6rem)] landscape-phone:whitespace-nowrap ${
+              className={`welcome-greeting-text max-w-full text-balance text-[clamp(1.35rem,6.2vw,2.35rem)] font-light tracking-wide transition-all duration-700 ease-out md:text-[clamp(1.5rem,3.1vw,2.75rem)] landscape-phone:text-[clamp(0.95rem,4.2vh,1.35rem)] ${
                 showFirstGreeting
                   ? "translate-y-0 opacity-100"
                   : "translate-y-4 opacity-0"
@@ -120,7 +120,7 @@ function WelcomePage() {
               My name is Devyn Weir.
             </h1>
             <h1
-              className={`welcome-greeting-text mt-3 max-w-full text-balance text-[clamp(1.35rem,6.2vw,3.75rem)] font-light tracking-wide transition-all duration-700 ease-out md:whitespace-nowrap sm:mt-4 landscape-phone:mt-2 landscape-phone:text-[clamp(1.05rem,4.6vh,1.6rem)] landscape-phone:whitespace-nowrap ${
+              className={`welcome-greeting-text mt-3 max-w-full text-balance text-[clamp(1.35rem,6.2vw,2.35rem)] font-light tracking-wide transition-all duration-700 ease-out sm:mt-4 md:text-[clamp(1.5rem,3.1vw,2.75rem)] landscape-phone:mt-2 landscape-phone:text-[clamp(0.95rem,4.2vh,1.35rem)] ${
                 showSecondGreeting
                   ? "translate-y-0 opacity-100"
                   : "translate-y-4 opacity-0"
